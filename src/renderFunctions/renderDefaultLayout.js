@@ -9,6 +9,7 @@ export const renderDefaultLayout = (div) => {
         <div class="main">
         <ul id="library"></ul>
         </div>
+        </div>
     </div>
      
     `
