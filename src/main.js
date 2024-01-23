@@ -1,15 +1,16 @@
 import '../style.css'
-import { fetchOnePokemon } from './fetchFunctions/onePokemon'
+
+
 import { renderDefaultLayout } from './renderFunctions/renderDefaultLayout'
+import { renderLibrary } from './renderFunctions/renderLibrary'
 document.querySelector('#app').innerHTML = `
  
 `
 
-const main = () => {
-    const app = document.querySelector('#app');
-    renderDefaultLayout(app)
+const main = async() => {
+  renderDefaultLayout(app)
+  renderLibrary(document.querySelector("#library"))
 
-    
 }
 
 

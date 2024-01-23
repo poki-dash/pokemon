@@ -2,11 +2,13 @@ export const renderDefaultLayout = (div) => {
 
     console.log("whats up")
         div.innerHTML = `
-    <div>
+    <div >
         <nav>
             <h1 id="logo">Poke Dash</h1>
         </nav>
+        <div class="main">
         <ul id="library"></ul>
+        </div>
     </div>
      
     `
