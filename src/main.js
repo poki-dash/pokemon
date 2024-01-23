@@ -1,13 +1,16 @@
 import '../style.css'
-import { fetchManyPokemon } from './fetchFunctions/manyPokemon'
-import { fetchOnePokemon } from './fetchFunctions/onePokemon'
+
+
+import { renderDefaultLayout } from './renderFunctions/renderDefaultLayout'
+import { renderLibrary } from './renderFunctions/renderLibrary'
 document.querySelector('#app').innerHTML = `
  
 `
 
-const main = () => {
-// fetchOnePokemon("pikachu")
-fetchManyPokemon()
+const main = async() => {
+  renderDefaultLayout(app)
+  renderLibrary(document.querySelector("#library"))
+
 }
 
 
