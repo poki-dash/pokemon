@@ -1,12 +1,11 @@
-import './style.css'
-
-
+import '../style.css'
+import { fetchOnePokemon } from './fetchFunctions/onePokemon'
 document.querySelector('#app').innerHTML = `
  
 `
 
 const main = () => {
-f
+fetchOnePokemon("pikachu")
 }
 
 
