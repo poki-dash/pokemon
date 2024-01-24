@@ -13,7 +13,11 @@ await  renderLibrary(document.querySelector("#library"))
     document.querySelector
   }
   )
-  renderRandomPoke(document.querySelector('#randomPoke'))
+  document.querySelector('#default').addEventListener('click', (e) => {
+    renderRandomPoke(document.querySelector('#randomPoke'))
+    e.target.parentNode.removeChild(e.target)
+  } )
+  
 };
 
 main();
