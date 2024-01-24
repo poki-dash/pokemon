@@ -13,11 +13,14 @@ await  renderLibrary(document.querySelector("#library"))
     document.querySelector
   }
   )
-  document.querySelector('#default').addEventListener('click', (e) => {
-    renderRandomPoke(document.querySelector('#randomPoke'))
+  document.querySelector('#player-2').addEventListener('click', (e) => {
+    renderRandomPoke(document.querySelector('#player-2'))
     e.target.parentNode.removeChild(e.target)
   } )
-  
+  document.querySelector('#player-1').addEventListener('click', (e) => {
+    renderRandomPoke(document.querySelector('#player-1'))
+    e.target.parentNode.removeChild(e.target)
+  } )
 };
 
 main();
