@@ -15,35 +15,39 @@
           <h1 id="logo">Poke Dash</h1>
         </nav>
         <div class="main">
-          <ul id="library"> <div class="popup">
-            <svg
-              id="x"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              style="width: 2rem; position: relative">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18 18 6M6 6l12 12" />
-            </svg>
-            <div class="popup-content"></div>
-          </div></ul>
-
-         
-        <div>
-
-          <ul id="randomPoke" style="display: flex; gap:5rem">
-            <li class="player-1">
-            <h2>Player 1</h2>
-          </li>
-
-       
-            <li id="default"><button type="submit">Get Random Pokemon</button></li>
-
+          <ul id="library">
+            <div class="popup">
+              <svg
+                id="x"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                style="width: 2rem; position: relative">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12" />
+              </svg>
+              <div class="popup-content"></div>
+            </div>
           </ul>
+          <div id="fighters" style="display: flex; gap:3rem">
+            <div>
+              <h2>Player 1</h2>
+              <div id="player-1">
+                <button type="submit">Get Random Pokemon</button>
+              </div>
+              
+            </div>
+            <div>
+              <h2>Player 2</h2>
+              <div id="player-2">
+                <button type="submit">Get Random Pokemon</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

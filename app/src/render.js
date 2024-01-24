@@ -67,16 +67,13 @@ export const renderPokemonData = async (name) => {
 
 };
 
-export const renderRandomPoke = async (list) => {
+export const renderRandomPoke = async (div) => {
 
   let id = Math.floor((Math.random() * 1000) + 1)
   const randPoke = await fetchRandPoke(id)
-  const li = document.createElement('li');
-  // li.innerHTML = '';
-  li.innerHTML = `
-  <h2>Player-2</h2>
+  div.innerHTML = `
   <h3>${randPoke.name}</h3>
   <img src=${randPoke.img}>
   <button type="submit">New Poke</button>`
-  list.prepend(li)
+  list.append(li)
 }
