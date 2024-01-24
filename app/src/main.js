@@ -1,5 +1,6 @@
 import "./style.css";
-import { renderLibrary, renderPokemonData } from "./render";
+import { renderLibrary, renderPokemonData, renderRandomPoke } from "./render";
+import { fetchRandPoke } from "./fetchfunctions";
 
 
 
@@ -12,6 +13,7 @@ await  renderLibrary(document.querySelector("#library"))
     document.querySelector
   }
   )
+  renderRandomPoke(document.querySelector('#randomPoke'))
 };
 
 main();
