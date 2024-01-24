@@ -1,7 +1,7 @@
 import { fetchData } from "./utils/utils";
 
 export const fetchManyPokemon = async () => {
-  const [response] = await fetchData('https://pokeapi.co/api/v2/pokemon?limit=35&offset=0');
+  const [response] = await fetchData('https://pokeapi.co/api/v2/pokemon?limit=250&offset=0');
   
   let data = response.results
     
