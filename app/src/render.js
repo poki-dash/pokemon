@@ -1,5 +1,6 @@
-import { fetchManyPokemon, fetchOnePokemon } from "./fetchfunctions";
+import { fetchManyPokemon, fetchOnePokemon, fetchRandPoke } from "./fetchfunctions";
 let active = false;
+
 export const renderLibrary = async (library) => {
   const data = await fetchManyPokemon();
   console.log(data);
@@ -24,10 +25,17 @@ export const renderLibrary = async (library) => {
   };
 }
 
-
-
 export const renderPokemonData = async (name, divs) => {
   const data = await fetchOnePokemon(name);
   console.log(data);
   console.log("hi");
 };
+
+export const renderRandomPoke = async (list) => {
+  let id = Math.floor((Math.random() * 1000) + 1)
+  const randPoke = await fetchRandPoke(id)
+  const li = document.createElement('li');
+  li.innerHTML = `<h3>${randPoke.name}</h3>
+  <img src=${randPoke.img}>`
+  list.append(li)
+}
