@@ -6,10 +6,11 @@ import { fetchRandPoke } from "./fetchfunctions";
 
 const main = async () => {
 await  renderLibrary(document.querySelector("#library"))
-  renderPokemonData("pikachu", document.querySelectorAll(".more-info"));
+  
 
-  document.querySelector(".popup").addEventListener("click",() => {
-    document.querySelector(".popup").style.display = "none"
+  document.querySelector(".popup").addEventListener("click", () => {
+    document.querySelector(".popup").style.display = "none";
+    document.querySelector
   }
   )
   renderRandomPoke(document.querySelector('#randomPoke'))
