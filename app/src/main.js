@@ -1,19 +1,14 @@
-import './style.css'
-import { renderDefaultLayout } from './renderFunctions/renderDefaultLayout'
-import { renderLibrary } from './renderFunctions/renderLibrary'
-import { renderPokemonData } from './renderFunctions/renderPokemonData'
-document.querySelector('#app').innerHTML = `
- 
-`
+import "./style.css";
+import { renderLibrary, renderDefaultLayout, renderPokemonData } from "./render";
 
 
-const main = async() => {
-  renderDefaultLayout(app)
-    renderLibrary(document.querySelector("#library"))
-    renderPokemonData("pikachu");
-document.querySelector().addEventListener(click, )
-}
 
-
+const main = async () => {
+  Promise.all(renderDefaultLayout(app),
+await  renderLibrary(document.querySelector("#library")),
+  renderPokemonData("pikachu",document.querySelectorAll(".more-info")))
+  
+  
+};
 
 main();
