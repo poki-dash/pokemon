@@ -50,19 +50,32 @@ export const renderPokemonData = async (name) => {
     <p style="margin-top:-1.2rem" >${data.moves[1].move.name}</p>
     <p style="margin-top:-1.2rem" >${data.moves[2].move.name}</p>
   </div>
-
-  <button class="select" style="border: 2px solid black; padding: .5rem; border-radius:5px"; width:"">Select</button>
+  <div style="display:flex; gap:2rem;">
+  <button  id="player-1-select" class="select">player-1</player-1></button>
+  <button id="player-2-select" class="select">player-2</button>
+  </div>
   `
 
-  // document.querySelector(".select").addEventListener("click", (e) => {
-  //   document.querySelector(".player-1").innerHTML = `
-  //   <div>
-  //     <img src="${}"></img>
-  //   </div>
-  //   `
+  document.querySelector("#player-1-select").addEventListener("click", (e) => {
+    document.querySelector("#player-1").innerHTML = `
+    <div>
+      <h3 style="font-weight:"bold">${data.name}</h3>
+      <img src="${data.sprites["front_default"]}"></img>
+      <button type="submit">Get Random Pokemon</button>
+    </div>
+    `
+})
+    document.querySelector("#player-2-select").addEventListener("click", (e) => {
+      document.querySelector("#player-2").innerHTML = `
+      <div>
+        <h3 style="font-weight:"bold">${data.name}</h3>
+        <img src="${data.sprites["front_default"]}"></img>
+        <button type="submit">Get Random Pokemon</button>
+      </div>
+      `
     
 
-//   })
+  })
   
 
 };
