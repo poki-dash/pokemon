@@ -74,6 +74,6 @@ export const renderRandomPoke = async (div) => {
   div.innerHTML = `
   <h3>${randPoke.name}</h3>
   <img src=${randPoke.img}>
-  <button type="submit">New Poke</button>`
+  <button type="submit">New Random Poke</button>`
   list.append(li)
 }
