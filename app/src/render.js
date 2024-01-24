@@ -37,22 +37,32 @@ export const renderPokemonData = async (name) => {
   <h2>${name}</h2>
   <img src="${data.sprites["front_default"]}" style="width:10vw"></img>
   <div style="display:flex">
-  <p style="font-weight:bold; margin-right:5px">type:</p>
-  <p>${data.types[0].type.name}</p>
+    <p style="font-weight:bold; margin-right:5px">type:</p>
+    <p>${data.types[0].type.name}</p>
   </div>
   <div style="margin-top:-1rem">
-  <div style="display:flex; margin-top:-.5rem">
-  </div></div>
+    <div style="display:flex; margin-top:-.5rem">
+    </div>
+  </div>
   <p style="font-weight: bold;margin-bottom: -.05rem ">Moves:</p>
   <div style="text-align:center; margin-top:-.4rem">
-  <p style="margin-bottom:rem" >${data.moves[0].move.name}</p>
-  <p style="margin-top:-1.2rem" >${data.moves[1].move.name}</p>
-  <p style="margin-top:-1.2rem" >${data.moves[2].move.name}</p>
+    <p style="margin-bottom:rem" >${data.moves[0].move.name}</p>
+    <p style="margin-top:-1.2rem" >${data.moves[1].move.name}</p>
+    <p style="margin-top:-1.2rem" >${data.moves[2].move.name}</p>
   </div>
 
-  <button style="border: 2px solid black; padding: .5rem; border-radius:5px">Select</button>
-  
+  <button class="select" style="border: 2px solid black; padding: .5rem; border-radius:5px"; width:"">Select</button>
   `
+
+  // document.querySelector(".select").addEventListener("click", (e) => {
+  //   document.querySelector(".player-1").innerHTML = `
+  //   <div>
+  //     <img src="${}"></img>
+  //   </div>
+  //   `
+    
+
+//   })
   
 
 };
