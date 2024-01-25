@@ -30,7 +30,7 @@ display:none;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
   position: absolute;
-  z-index: 10000000;
+  z-index: 100000;
   width: 20rem;
   height: 30rem;
   background-color: white;
@@ -46,7 +46,22 @@ display:none;
 }
 
 
-
+#battle-scene {
+  border: 2px solid black;
+  justify-content: center;
+  display:none;
+  align-items: center;
+  width:40rem;
+  height:30rem;
+  z-index: 100000000;
+  position: absolute;
+  top: 10rem;
+  border-radius:10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  right: 26.9rem;
+  display: hidden;
+}
 
 
 #library {
