@@ -57,6 +57,7 @@ export const renderPokemonData = async (name) => {
   `;
 
   document.querySelector("#player-1-select").addEventListener("click", (e) => {
+    
     let div = document.querySelector("#player-1");
     div.dataset.name = data.name;
     div.dataset.img = data.sprites["front_default"];
@@ -70,10 +71,12 @@ export const renderPokemonData = async (name) => {
   });
 
   document.querySelector("#player-2-select").addEventListener("click", (e) => {
+    
     let div = document.querySelector("#player-2");
     div.dataset.name = data.name;
     div.dataset.img = data.sprites["front_default"];
     document.querySelector("#player-2").innerHTML = `
+
       
         <h3 style="font-weight:"bold">${data.name.toUpperCase()}</h3>
         <img src="${data.sprites["front_default"]}"></img>
@@ -92,6 +95,8 @@ export const renderRandomPoke = async (div) => {
   <h3>${randPoke.name.toUpperCase()}</h3>
   <img src=${randPoke.img}>
   <button type="submit">New Random Poke</button>`;
+
+
 };
 
 export const renderBattle = () => {
@@ -104,7 +109,8 @@ export const renderBattle = () => {
   const music = new Audio("./src/battleMusic.mp3");
   music.loop = true;
   music.play();
-
+  document.querySelector(".besides-battle").style.display = "none";
+  
 
 
   battleScene.innerHTML = `
@@ -129,7 +135,7 @@ export const renderBattle = () => {
 
   setTimeout(() => {
     battleScene.innerHTML = `
-    <img style="width:39.5rem; height:29.5rem" src="https://www.nicepng.com/png/detail/178-1784143_photo-street-fighter-fight-png.png" />
+    <img style="width:60rem; height:30rem" src="https://www.nicepng.com/png/detail/178-1784143_photo-street-fighter-fight-png.png" />
     `;
   }, 9000);
 
@@ -164,6 +170,7 @@ export const renderBattle = () => {
   setTimeout(() => {
     battleScene.style.display = "none";
     music.pause();
+    document.querySelector(".besides-battle").style.display = "flex";
   }, 18000);
 };
 
