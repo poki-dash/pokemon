@@ -13,7 +13,21 @@
       <div>
         <nav>
           <h1 id="logo">Poke Dash</h1>
+          <a href="#libray">Library</a>
+          <a href="search">Search</a>
         </nav>
+      </div>
+
+      <div>
+        <form id="search" aria-labelledby="form-heading">
+          <h2 id="form-heading">Poke Search</h2>
+          <label for="query">
+          <input type="search" id="query" name="pokeName" placeholder="Search..." required>
+          <button id="poke-submit">Get Pokemon</button>
+        </form>
+      </div>
+
+      <div id="render-search"></div>
 
 
         <div style="margin-top:5rem" class="main">
@@ -38,6 +52,7 @@
           </ul>
 
           <div style="display:flex;flex-direction:column;align-items: center;gap:5rem;">
+            <h2>Game</h2>
             <div id="fighters" style="display: flex; gap:3rem">
               <div>
                 <h2 style="margin-right: 0;">Player 1</h2>
