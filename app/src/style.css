@@ -68,7 +68,7 @@ display:none;
   display: flex;
   border: 1px solid black;
   width: 50rem;
-  height: 40rem;
+  height: 30rem;
   flex-wrap: wrap;
   overflow-y: auto;
   overflow-x: visible;
