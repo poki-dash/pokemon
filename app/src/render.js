@@ -84,9 +84,82 @@ export const renderRandomPoke = async (div) => {
 
   let id = Math.floor((Math.random() * 1000) + 1)
   const randPoke = await fetchRandPoke(id)
+  div.dataset.name = randPoke.name;
+  div.dataset.img = randPoke.img;
   div.innerHTML = `
   <h3>${randPoke.name}</h3>
   <img src=${randPoke.img}>
   <button type="submit">New Random Poke</button>`
   list.append(li)
+
+  console.log(div.dataset.name)
+}
+
+export const renderBattle = () => {
+    
+  const battleScene = document.querySelector("#battle-scene");
+  battleScene.style.display = "flex"
+ const player1Img = document.querySelector("#player-1").dataset.img;
+  const player1Name = document.querySelector("#player-1").dataset.name;
+  const player2Img = document.querySelector("#player-2").dataset.img;
+  const player2Name = document.querySelector("#player-2").dataset.name;
+  
+  battleScene.innerHTML = `
+  <h1>Player 1<h1>
+  <h2>${player1Name}</h2>
+  <img src="${player1Img}" />
+  `
+
+  setTimeout(() => {
+    battleScene.innerHTML = `
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Street_Fighter_VS_logo.png"/>
+  `
+  }, 2000)
+  
+  setTimeout(() => {
+    battleScene.innerHTML = `
+  <h1>Player 2<h1>
+  <h2>${player2Name}</h2>
+  <img src="${player2Img}" />
+  `
+  }, 4000)
+  
+  setTimeout(() => {
+    battleScene.innerHTML = `
+    <img style="width:39.5rem; height:29.5rem" src="https://www.nicepng.com/png/detail/178-1784143_photo-street-fighter-fight-png.png" />
+    `
+  }, 6000)
+  
+  setTimeout(() => {
+    battleScene.innerHTML = `
+    <h1>And the winner is.......</h1>
+    `
+  }, 8000);
+
+  setTimeout(() => {
+    let winner = Math.floor((Math.random() * 2) + 1);
+    if (winner === 1){
+      battleScene.innerHTML = `
+      <h1>Player 1<h1>
+      <h2>${player1Name}</h2>
+      <img src="${player1Img}" />
+      `
+    } else {
+      battleScene.innerHTML = `
+      <h1>Player 2<h1>
+      <h2>${player2Name}</h2>
+      <img src="${player2Img}" />
+      `
+    
+    }
+
+  }, 13000
+  )
+
+  setTimeout(() => {
+    battleScene.style.display = "none"
+  },15000)
+
+
+
 }
