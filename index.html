@@ -5,8 +5,9 @@
     <link rel="icon" type="image/svg+xml" href="/pokemon/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/pokemon/assets/index-epeNSVfr.js"></script>
-    <link rel="stylesheet" crossorigin href="/pokemon/assets/index-ZW38uRb3.css">
+
+    <script type="module" crossorigin src="/pokemon/assets/index-KX_fLVIe.js"></script>
+    <link rel="stylesheet" crossorigin href="/pokemon/assets/index-_9zBVkfM.css">
   </head>
 
   <body>
@@ -15,6 +16,36 @@
         <nav>
           <h1 id="logo">Poke Dash</h1>
         </nav>
+
+        <div style="display:flex;flex-direction:column;align-items: center;gap:5rem;margin-top: 10rem;">
+        <div id="fighters" style="display: flex; gap:3rem">
+          <div>
+            <h2>Player 1</h2>
+            <div id="player-1">
+              <button type="submit">Get Random Pokemon</button>
+            </div>
+
+          </div>  
+
+          <div>
+            <h2>VS.</h2>
+          </div>
+
+          <div>
+            <h2>Player 2</h2>
+            <div id="player-2">
+              <button type="submit">Get Random Pokemon</button>
+            </div>
+          </div>
+        </div>
+        <div id="battle-button"> 
+          <button type="submit">Battle!</button>
+        </div>
+      </div>
+    </div>
+    <div   id="battle-scene">
+
+    </div>
         <div class="main">
           <ul id="library">
             <div class="popup">
@@ -35,34 +66,7 @@
               <div class="popup-content"></div>
             </div>
           </ul>
-          <div id="fighters" style="display: flex; gap:3rem">
-            <div>
-              <h2>Player 1</h2>
-              <div id="player-1">
-                <button type="submit">Get Random Pokemon</button>
-              </div>
-
-            </div>  
-
-            <div>
-              <h2>VS.</h2>
-            </div>
-
-            <div>
-              <h2>Player 2</h2>
-              <div id="player-2">
-                <button type="submit">Get Random Pokemon</button>
-              </div>
-            </div>
-          </div>
-          <div id="battle-button"> 
-            <button type="submit">Battle!</button>
-          </div>
-        </div>
-      </div>
-      <div class="battle-scene">
-        
-      </div>
     </div>
+  </div>
   </body>
 </html>
