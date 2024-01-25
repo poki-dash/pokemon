@@ -47,26 +47,26 @@ display:none;
 
 
 #battle-scene {
-  border: 2px solid black;
+ 
   justify-content: center;
-  display:none;
   align-items: center;
-  width:40rem;
-  height:30rem;
+  width: 60rem;
+  height: 30rem;
   z-index: 100000000;
-  position: absolute;
-  top: 10rem;
-  border-radius:10px;
+  position: fixed; 
+  top: 50%;
+  left: 50%; 
+  border-radius: 10px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
   background-color: white;
-  right: 26.9rem;
-  display: hidden;
+  transform: translate(-50%, -50%); 
+  display: none; 
 }
 
 
 #library {
   display: flex;
-  border: 1px solid black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   width: 50rem;
   height: 30rem;
   flex-wrap: wrap;
