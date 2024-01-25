@@ -5,10 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/pokemon/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-
-    <script type="module" crossorigin src="/pokemon/assets/index-C7X9hKVe.js"></script>
+    <script type="module" crossorigin src="/pokemon/assets/index-y3UW3jAL.js"></script>
     <link rel="stylesheet" crossorigin href="/pokemon/assets/index-ZbasiLOw.css">
-
   </head>
 
   <body>
@@ -16,7 +14,21 @@
       <div>
         <nav>
           <h1 id="logo">Poke Dash</h1>
+          <a href="#libray">Library</a>
+          <a href="search">Search</a>
         </nav>
+      </div>
+
+      <div>
+        <form id="search" aria-labelledby="form-heading">
+          <h2 id="form-heading">Poke Search</h2>
+          <label for="query">
+          <input type="search" id="query" name="pokeName" placeholder="Search..." required>
+          <button id="poke-submit">Get Pokemon</button>
+        </form>
+      </div>
+
+      <div id="render-search"></div>
 
         
         <div class="besides-battle" style="margin-top:5rem;display:flex;flex-direction:column;align-items: center;" class="main">
@@ -40,8 +52,8 @@
             </div>
           </ul>
 
-
           <div style="display:flex;flex-direction:column;align-items: center;gap:5rem;">
+            <h2>Game</h2>
             <div id="fighters" style="display: flex; gap:3rem">
               <div>
                 <h2 style="margin-right: 0;">Player 1</h2>
@@ -72,7 +84,6 @@
     
         </div>
         
-
     </div>
   </div>
   </body>
