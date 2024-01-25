@@ -39,4 +39,14 @@ export const fetchRandPoke = async (id) => {
   }
 }
 
- 
+export const fetchSearchPoke = async(pokeName) => {
+  const pokeNameRes = await fetchData(`https://pokeapi.co/api/v2/pokemon/${pokeName.toLowerCase()}`)
+  const data = pokeNameRes[0]
+  if(!data) return null;
+  return {
+    name: data.name,
+    img: data.sprites['front_default']
+  }
+}
+
+

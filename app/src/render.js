@@ -16,7 +16,7 @@ export const renderLibrary = async (library) => {
     li.dataset.id = `poke-${i}`;
     li.innerHTML = ` 
     <div data-id="poke-${i}"> 
-    <h2 class="poke-name">${name}</h2>
+    <h2 class="poke-name">${name.toUpperCase()}</h2>
       
       </div>
       </div>
@@ -34,7 +34,7 @@ export const renderPokemonData = async (name) => {
   const [data] = await fetchOnePokemon(name);
 
   document.querySelector(".popup-content").innerHTML = `
-  <h2>${name}</h2>
+  <h2>${name.toUpperCase()}</h2>
   <img src="${data.sprites["front_default"]}" style="width:10vw"></img>
   <div style="display:flex">
     <p style="font-weight:bold; margin-right:5px">type:</p>
@@ -46,9 +46,9 @@ export const renderPokemonData = async (name) => {
   </div>
   <p style="font-weight: bold;margin-bottom: -.05rem ">Moves:</p>
   <div style="text-align:center; margin-top:-.4rem">
-    <p style="margin-bottom:rem" >${data.moves[0].move.name}</p>
-    <p style="margin-top:-1.2rem" >${data.moves[1].move.name}</p>
-    <p style="margin-top:-1.2rem" >${data.moves[2].move.name}</p>
+    <p style="margin-bottom:rem" >${data.moves[0].move.name.toUpperCase()}</p>
+    <p style="margin-top:-1.2rem" >${data.moves[1].move.name.toUpperCase()}</p>
+    <p style="margin-top:-1.2rem" >${data.moves[2].move.name.toUpperCase()}</p>
   </div>
   <div style="display:flex; gap:2rem;">
   <button  id="player-1-select" class="select">player-1</player-1></button>
@@ -63,7 +63,7 @@ export const renderPokemonData = async (name) => {
     div.dataset.img = data.sprites["front_default"];
     document.querySelector("#player-1").innerHTML = `
    
-      <h3 style="font-weight:"bold">${data.name}</h3>
+      <h3 style="font-weight:"bold">${data.name.toUpperCase()}</h3>
       <img src="${data.sprites["front_default"]}"></img>
       <button type="submit">Get Random Pokemon</button>
     
@@ -77,7 +77,8 @@ export const renderPokemonData = async (name) => {
     div.dataset.img = data.sprites["front_default"];
     document.querySelector("#player-2").innerHTML = `
 
-        <h3 style="font-weight:"bold">${data.name}</h3>
+      
+        <h3 style="font-weight:"bold">${data.name.toUpperCase()}</h3>
         <img src="${data.sprites["front_default"]}"></img>
         <button type="submit">Get Random Pokemon</button>
      
@@ -91,11 +92,11 @@ export const renderRandomPoke = async (div) => {
   div.dataset.name = randPoke.name;
   div.dataset.img = randPoke.img;
   div.innerHTML = `
-  <h3>${randPoke.name}</h3>
+  <h3>${randPoke.name.toUpperCase()}</h3>
   <img src=${randPoke.img}>
   <button type="submit">New Random Poke</button>`;
-  list.append(li);
-  console.log(div.dataset.name);
+
+
 };
 
 export const renderBattle = () => {
@@ -114,7 +115,7 @@ export const renderBattle = () => {
 
   battleScene.innerHTML = `
   <h1 style="margin-bottom:-3rem">Player 1<h1>
-  <h2>${player1Name}</h2>
+  <h2>${player1Name.toUpperCase()}</h2>
   <img src="${player1Img}" />
   `;
 
@@ -127,7 +128,7 @@ export const renderBattle = () => {
   setTimeout(() => {
     battleScene.innerHTML = `
   <h1 style="margin-bottom:-3rem">Player 2<h1>
-  <h2>${player2Name}</h2>
+  <h2>${player2Name.toUpperCase()}</h2>
   <img src="${player2Img}" />
   `;
   }, 6000);
@@ -149,7 +150,7 @@ export const renderBattle = () => {
     if (winner === 1) {
       battleScene.innerHTML = `
       <h1>Player 1<h1>
-      <h2>${player1Name}</h2>
+      <h2>${player1Name.toUpperCase()}</h2>
       <img src="${player1Img}" />
       `;
       music.pause();
@@ -158,7 +159,7 @@ export const renderBattle = () => {
     } else {
       battleScene.innerHTML = `
       <h1>Player 2<h1>
-      <h2>${player2Name}</h2>
+      <h2>${player2Name.toUpperCase()}</h2>
       <img src="${player2Img}" />
       `;
       const yay = new Audio("./src/yay.mp3");
@@ -172,3 +173,41 @@ export const renderBattle = () => {
     document.querySelector(".besides-battle").style.display = "flex";
   }, 18000);
 };
+
+export const renderSearchPoke = async (div, searchPoke) => {
+  div.dataset.name = searchPoke.name;
+  div.dataset.img = searchPoke.img;
+  div.innerHTML = `
+  <h3>${searchPoke.name.toUpperCase()}</h3>
+  <img src=${searchPoke.img}>
+  <button id="search-SelectP1" class="select">player-1</button>
+  <button id="search-SelectP2"class="select">player-2</button>`
+
+  document.querySelector('#search-SelectP1').addEventListener('click',  async (e) => {
+    const [pokemonData] = await fetchOnePokemon(searchPoke.name)
+    console.log(pokemonData)
+    let div = document.querySelector("#player-1");
+    div.dataset.name = pokemonData.name;
+    div.dataset.img = pokemonData.sprites["front_default"];
+    document.querySelector("#player-1").innerHTML = `
+      <h3 style="font-weight:"bold">${pokemonData.name.toUpperCase()}</h3>
+      <img src="${pokemonData.sprites["front_default"]}"></img>
+      <button type="submit">Get Random Pokemon</button>`
+    })
+
+    document.querySelector('#search-SelectP2').addEventListener('click',  async (e) => {
+      const [pokemonData] = await fetchOnePokemon(searchPoke.name)
+      let div = document.querySelector("#player-2");
+      div.dataset.name = pokemonData.name;
+      div.dataset.img = pokemonData.sprites["front_default"];
+      document.querySelector("#player-2").innerHTML = `
+        <h3 style="font-weight:"bold">${pokemonData.name.toUpperCase()}</h3>
+        <img src="${pokemonData.sprites["front_default"]}"></img>
+        <button type="submit">Get Random Pokemon</button>`
+      })
+}
+
+export const renderFailFetch = (div) => {
+  div.innerHTML =  `
+  <p>Pokemon Not Found</p>`
+}
