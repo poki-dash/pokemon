@@ -1,89 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="" lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <script type="module" src="./src/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Poke Dash</title>
   </head>
 
-  <body>
+  <body class="bg-[#F6F8FC] w-full h-full transition-all duration-200 linear">
     <div id="app">
       <div>
-        <nav>
-          <h1 id="logo">Poke Dash</h1>
-          <a href="#libray">Library</a>
-          <a href="search">Search</a>
+        <nav class="flex justify-between">
+          <div class="flex items-center p-5 gap-5">
+            <img
+              class="w-[40px]"
+              src="https://cdn-icons-png.flaticon.com/128/361/361998.png"
+              alt="logo" />
+            <h1 class="text-2xl font-semibold" id="logo">Poke Dash</h1>
+          </div>
+          <div class="p-5 text-xl flex gap-10 align-middle">
+            <a href="#library">Library</a>
+            <a href="search">Search</a>
+          </div>
         </nav>
       </div>
 
-      <div>
-        <form id="search" aria-labelledby="form-heading">
-          <h2 id="form-heading">Poke Search</h2>
-          <label for="query">
-          <input type="search" id="query" name="pokeName" placeholder="Search..." required>
-          <button id="poke-submit">Get Pokemon</button>
+      <div class="flex flex-col items-center">
+        <form id="search" aria-label="searchpokemon">
+          <label for="query"></label>
+          <input
+            class="bg-white p-1 rounded-sm"
+            type="search"
+            id="query"
+            name="pokeName"
+            placeholder="Search a pokemon"
+            required />
+          <button
+            type="submit"
+            class="bg-red-500 p-1 rounded-md text-white font-semibold hover:scale-105 transition-all ease-in"
+            id="poke-submit">
+            Get Pokemon
+          </button>
         </form>
       </div>
 
-      <div id="render-search"></div>
+      <div
+        class="main besides-battle flex flex-col items-center justify-center">
+        <div
+          class="players flex gap-40 mt-10 justify-center text-red-500 transition-all ease-in duration-300 opacity-1">
+          <div class="flex flex-col items-center gap-2">
+            <h3 class="text-xl">Player 1</h3>
+            <p
+              id="player-1"
+              class="text-black text-md player-1-sel player-1-sel transition-all ease-in duration-300 opacity-1">
+              select
+            </p>
+            <button
+              id="random-button1"
+              class="bg-red-500 text-[12px] mt-5 text-white p-1 rounded-md"
+              type="submit">
+              Get Random Pokemon
+            </button>
+          </div>
+          <div
+            class="absolute z-[100000000] fit-content bg-white rounded-3xl p-4 hidden shadow-lg"
+            id="render-search"></div>
+          <div class="flex flex-col gap-2 items-center">
+            <h3 class="text-xl">Player 2</h3>
+            <p
+              id="player-2"
+              class="text-black text-md player-2-sel transition-all ease-in duration-300 opacity-1">
+              select
+            </p>
+            <button
+              id="random-button2"
+              class="bg-red-500 text-[12px] mt-5 text-white p-1 rounded-md"
+              type="submit">
+              Get Random Pokemon
+            </button>
+          </div>
+        </div>
 
-        
-        <div class="besides-battle" style="margin-top:5rem;display:flex;flex-direction:column;align-items: center;" class="main">
-          <ul  id="library">
-            <div class="popup">
+        <button id="battle-button" class="text-red-500">Start Battle</button>
+        <div class="flex items-center gap-5 mt-[2rem]">
+          <ul
+            class="flex px-7 gap-5 flex-row pt-[3rem] items-center justify-center overflow-scroll hide-scrollbar flex-wrap w-full h-[35rem] bg-[#F6F8FC]"
+            id="library">
+            <div
+              class="popup hidden border border-black shadow-2xl rounded-xl absolute bg-white opacity-100 w-[20rem] h-[30rem] z-[100000]">
               <svg
-                
                 id="x"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                style="width: 2rem; position: relative; margin:10px">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18 18 6M6 6l12 12" />
+                style="width: 2rem; position: relative; margin: 10px">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12" />
               </svg>
-              <div data-aos="flip-left" class="popup-content"></div>
+              <div
+                class="popup-content flex flex-col justify-center items-center"></div>
             </div>
           </ul>
-
-          <div style="display:flex;flex-direction:column;align-items: center;gap:5rem;">
-            <h2>Game</h2>
-            <div id="fighters" style="display: flex; gap:3rem">
-              <div>
-                <h2 style="margin-right: 0;">Player 1</h2>
-                <div style="display:flex;flex-direction:column; align-items: center;" id="player-1">
-                  <button type="submit">Get Random Pokemon</button>
-                </div>
-    
-              </div>  
-    
-              <div>
-                <h2>VS.</h2>
-              </div>
-    
-              <div>
-                <h2>Player 2</h2>
-                <div style="display:flex; flex-direction:column; align-items: center;" id="player-2">
-                  <button style="align-self: center;" type="submit">Get Random Pokemon</button>
-                </div>
-              </div>
-            </div>
-            <div style="margin-top:-3rem" id="battle-button"> 
-              <button  type="submit">Battle!</button>
-            </div>
-          </div>
-
         </div>
-        <div style="flex-direction:column;align-items:center"   id="battle-scene">
-    
-        </div>
-        
-    </div>
-  </div>
+      </div>
+    </div> 
+    <div class="flex  justify-center items-center h-full m-auto"
+    id="battle-scene"></div>
   </body>
+ 
 </html>
