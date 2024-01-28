@@ -6,9 +6,9 @@ import {
 } from "./fetchfunctions";
 import { getTypeIcon } from "./utils/getTypeIcon";
 
-const battleMusic = new Audio("./src/music/battleMusic.mp3");
-const homeMusic = new Audio("./src/music/homeMusic.mp3");
-const victory = new Audio("./src/music/victory.mp3");
+const battleMusic = new Audio("./app/src/music/battleMusic.mp3");
+const homeMusic = new Audio("./app/src/music/homeMusic.mp3");
+const victory = new Audio("./app/src/music/victory.mp3");
 victory.volume = 0.5;
 battleMusic.volume = 0.3;
 homeMusic.volume = 0.1;
