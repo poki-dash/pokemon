@@ -113,7 +113,7 @@ export const renderPokemonData = async (name, div, data) => {
   });
   document.querySelector("#player-1-select").addEventListener("click", (e) => {
     clearInterval(interval1);
-    const selectSound = new Audio("./src/music/selectSound.mp3");
+    const selectSound = new Audio("./app/src/music/selectSound.mp3");
     selectSound.volume = 0.5;
     selectSound.play();
     let player1 = document.querySelector("#player-1");
@@ -146,7 +146,7 @@ export const renderPokemonData = async (name, div, data) => {
 
   document.querySelector("#player-2-select").addEventListener("click", (e) => {
     clearInterval(interval2);
-    const selectSound = new Audio("./src/music/selectSound.mp3");
+    const selectSound = new Audio("./app/src/music/selectSound.mp3");
     selectSound.volume = 0.5;
     selectSound.play();
     let player2 = document.querySelector("#player-2");
@@ -214,7 +214,7 @@ export const renderLibrary = async (library) => {
 
 export const renderRandomPoke = async (div) => {
   let id = Math.floor(Math.random() * 1000 + 1);
-  const selectSound = new Audio("./src/music/selectSound.mp3");
+  const selectSound = new Audio("./app/src/music/selectSound.mp3");
   selectSound.volume = 0.5;
   selectSound.play();
   const randPoke = await fetchRandPoke(id);
@@ -300,7 +300,7 @@ export const renderBattle = () => {
         `;
         }, 2000);
         setTimeout(() => {
-          const hit = new Audio("./src/music/hitSound.mp3");
+          const hit = new Audio("./app/src/music/hitSound.mp3");
           hit.volume = 0.5;
           hit.play();
           hits++;
@@ -405,7 +405,7 @@ export const renderSearchPoke = async (div, searchPoke) => {
     .addEventListener("click", async (e) => {
       clearInterval(interval1);
       div.style.display = "none";
-      const selectSound = new Audio("./src/music/selectSound.mp3");
+      const selectSound = new Audio("./app/src/music/selectSound.mp3");
       selectSound.volume = 0.5;
       selectSound.play();
       const [pokemonData] = await fetchOnePokemon(searchPoke.name);
@@ -431,7 +431,7 @@ export const renderSearchPoke = async (div, searchPoke) => {
       clearInterval(interval2);
       homeMusic.play();
       div.style.display = "none";
-      const selectSound = new Audio("./src/music/selectSound.mp3");
+      const selectSound = new Audio("./app/src/music/selectSound.mp3");
       selectSound.volume = 0.5;
       selectSound.play();
       const [pokemonData] = await fetchOnePokemon(searchPoke.name);
